@@ -1,0 +1,170 @@
+/* ===== Design tokens ===== */
+:root {
+  --ledger-bg: #f4f6fb;
+  --ledger-ink: #1f2937;
+  --ledger-muted: #5b6472;
+  --ledger-line: #e3e7ee;
+  --ledger-gutter: 1.25rem; /* one inner spacing value shared by headers, bodies and tables */
+  --ledger-radius: 0.75rem;
+  --ledger-header-from: #0b3d91;
+  --ledger-header-to: #0d6efd;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--ledger-bg);
+  color: var(--ledger-ink);
+}
+
+/* ===== Page header ===== */
+.app-header {
+  background: linear-gradient(120deg, var(--ledger-header-from), var(--ledger-header-to));
+  color: #fff;
+  padding: 1.75rem 0 2.25rem;
+}
+
+/* ===== Layout: each column is a vertical stack with one consistent gap ===== */
+.ledger-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 0; /* lets tables shrink and scroll inside their card instead of widening the page */
+}
+
+/* ===== Cards ===== */
+.card {
+  --bs-card-border-color: var(--ledger-line);
+  --bs-card-border-radius: var(--ledger-radius);
+  --bs-card-inner-border-radius: calc(var(--ledger-radius) - 1px);
+  --bs-card-spacer-x: var(--ledger-gutter);
+  --bs-card-spacer-y: var(--ledger-gutter);
+  --bs-card-cap-padding-x: var(--ledger-gutter);
+  overflow: hidden;
+}
+.card-header {
+  border-bottom: 0;
+}
+.card-header.bg-white {
+  border-bottom: 1px solid var(--ledger-line);
+}
+.card-header h2.h6 {
+  letter-spacing: 0.04em;
+}
+
+/* ===== Summary cards ===== */
+.stat-card {
+  border-left: 4px solid transparent;
+}
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ledger-muted);
+}
+.stat-value {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.stat-hint {
+  font-size: 0.8rem;
+  color: var(--ledger-muted);
+}
+.stat-green  { border-left-color: #198754; }
+.stat-blue   { border-left-color: #0d6efd; }
+.stat-amber  { border-left-color: #f59e0b; }
+.stat-violet { border-left-color: #7c3aed; }
+
+/* ===== Forms ===== */
+.form-label {
+  font-size: 0.9rem;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+/* Keep validation focus rings consistent with their state */
+.form-control.is-invalid:focus,
+.form-select.is-invalid:focus {
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.15);
+}
+.form-control.is-valid:focus,
+.form-select.is-valid:focus {
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.15);
+}
+/* Disabled controls: clearly inactive but still readable */
+.form-control:disabled,
+.form-select:disabled {
+  background-color: #eef0f4;
+  color: var(--ledger-muted);
+  cursor: not-allowed;
+}
+
+/* ===== Tables ===== */
+.table-tools {
+  padding: 0.75rem var(--ledger-gutter);
+  border-bottom: 1px solid var(--ledger-line);
+}
+.ledger-table > :not(caption) > * > * {
+  padding: 0.7rem 0.75rem;
+}
+.ledger-table th:first-child,
+.ledger-table td:first-child {
+  padding-left: var(--ledger-gutter);
+}
+.ledger-table th:last-child,
+.ledger-table td:last-child {
+  padding-right: var(--ledger-gutter);
+}
+.ledger-table thead th {
+  background: #f8fafc;
+  color: var(--ledger-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.ledger-table tfoot th {
+  background: #f8fafc;
+  border-top: 1px solid var(--ledger-line);
+}
+.ledger-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+.table th.w-35 {
+  width: 35%;
+}
+
+/* Compact empty state: a single short row, no tall blank area */
+.ledger-table .empty-row td {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-style: italic;
+  color: var(--ledger-muted);
+}
+
+/* Keep the delete button compact */
+.btn-delete {
+  white-space: nowrap;
+}
+
+/* ===== Small screens ===== */
+@media (max-width: 575.98px) {
+  :root {
+    --ledger-gutter: 1rem;
+  }
+  .app-header {
+    padding: 1.25rem 0 1.75rem;
+  }
+  .stat-value {
+    font-size: 1.1rem;
+  }
+  /* Form buttons fill the row so they are easy to tap */
+  .card-body form .d-flex .btn {
+    flex: 1 1 auto;
+  }
+}

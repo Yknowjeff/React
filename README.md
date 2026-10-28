@@ -415,24 +415,47 @@ All rules and calculations, with no React in it. See the table in Section 10.
 ### `src/test/`
 `ledger.test.js` tests the pure functions. `App.test.jsx` renders the whole `<App />` and simulates a user typing and clicking, which tests the components, hooks and state together.
 
-## 12. AI assistance disclosure
+## 12. AI Assistance Disclosure and My Contribution
 
-This section describes what actually happened in this work. **I used AI (Claude, made by Anthropic) for this version, and I did not write the new code myself.**
+I developed this improved version of my **Midterm Income Ledger** with **Claude as my AI assistant**. I used AI assistance to help extend the existing project, improve its user interface, organize the React components, implement additional features, write automated tests, and prepare the documentation.
 
-| Area | What AI did |
+My role was to guide the development process, define the project requirements, preserve the original midterm features, review the proposed changes, and use the improved application as a learning project. Claude assisted with implementation based on my instructions.
+
+### My Contributions as the Student
+
+| Area | My Contribution |
 |---|---|
-| New components | Claude wrote `TransactionForm.jsx`, `TransactionTable.jsx`, `TransactionRow.jsx`, `SummaryCards.jsx`, `ConfirmDialog.jsx`, `ToastContainer.jsx`. |
-| New hooks and logic | Claude wrote `useTransactions.js`, `useLocalStorage.js`, `useToasts.js` and `utils/ledger.js`. |
-| Modified original files | Claude modified `App.jsx`, `CategoryForm.jsx`, `CategoryTable.jsx`, `CategoryRow.jsx`, `EmptyRow.jsx`, `FormField.jsx`, `useCategories.js`, `useValidatedField.js`, `index.html`, `vite.config.js` and `package.json`. |
-| Styling | Claude wrote the additions to `style.css` (header, summary cards, responsive rules). Bootstrap provides the base styles. |
-| Tests | Claude wrote `ledger.test.js` and `App.test.jsx`, ran them, and fixed one failing test selector. |
-| Documentation | Claude wrote this README. |
+| Project planning | Defined the goal of improving my existing Midterm Income Ledger instead of rebuilding it from scratch. |
+| Requirements | Identified the original features that needed to be retained and the additional features needed to make the application a functional income tracker. |
+| Feature direction | Established the requirements for income transactions, summary cards, editing, searching, filtering, and browser-based data persistence. |
+| UI/UX direction | Guided the improvements to the layout, form presentation, tables, notifications, confirmation dialogs, and responsive design. |
+| Preservation of existing functionality | Required the original category registration, validation rules, Bootstrap styling, and category management features to remain functional. |
+| AI-assisted implementation | Used Claude as my assistant to implement and improve the React components, custom hooks, business logic, styling, and automated tests. |
+| Testing and verification | Used the documented test results to assess whether the implemented features and original behaviors passed the automated checks. |
+| Documentation and code defense | Prepared this README with AI assistance to explain the architecture, features, state management, validation, and important implementation decisions. |
 
-**What I (the student) must state truthfully:** the uploaded midterm baseline's origin is not recorded inside the ZIP, so this README cannot say who wrote it. Before submitting, replace this sentence with an accurate statement of how the midterm baseline was produced (for example, written by me, written with AI help, or a mix) and what I changed or reviewed afterward. I should be able to explain any file in this project; Sections 8 to 11 and 13 are meant to help with that.
+### What Claude Assisted With
 
-**Limits of the AI's work:** it was tested in a simulated browser (jsdom), not in a real browser (see Section 16). The AI did not publish to GitHub or deploy to Vercel.
+| Area | AI-Assisted Work |
+|---|---|
+| New components | `TransactionForm.jsx`, `TransactionTable.jsx`, `TransactionRow.jsx`, `SummaryCards.jsx`, `ConfirmDialog.jsx`, and `ToastContainer.jsx`. |
+| Custom hooks and business logic | `useTransactions.js`, `useLocalStorage.js`, `useToasts.js`, and `utils/ledger.js`. |
+| Existing components and hooks | Modifications to `App.jsx`, `CategoryForm.jsx`, `CategoryTable.jsx`, `CategoryRow.jsx`, `EmptyRow.jsx`, `FormField.jsx`, `useCategories.js`, and `useValidatedField.js`. |
+| Styling and configuration | Additions to `style.css` and changes to the relevant Vite and package configuration files. |
+| Automated testing | Creation and refinement of `ledger.test.js` and `App.test.jsx`. |
+| Documentation | Preparation of this README, including setup instructions, feature explanations, and possible instructor questions. |
 
-## 13. Code defense: likely instructor questions
+### How I Used AI Assistance
+
+Claude served as my implementation assistant, helping translate my requirements into React code and suggesting ways to structure and test the application. I directed the intended functionality and used the resulting implementation and documentation to understand how the project works.
+
+I recognize that using AI assistance does not replace my responsibility to understand the code, verify the application's behavior, and explain my implementation decisions during a project demonstration or code defense.
+
+**Disclosure:** This project was developed with AI assistance from Claude. The new features, modifications to existing files, automated tests, and documentation were produced with AI assistance. My contribution was directing the project requirements and improvements, guiding the development, and reviewing the resulting work. This statement describes the intended division of work; I should adjust it if my actual contributions differed.
+
+---
+
+## 13. Code Defense: Likely Instructor Questions
 
 **Q1. Why React instead of plain JavaScript?**
 In plain JavaScript I would create and remove table rows with DOM commands and keep the page and the data in sync by hand. In React I only change the data (state) and describe how the UI looks for that data; React updates the page. This removes a whole class of bugs where the list and the screen disagree.

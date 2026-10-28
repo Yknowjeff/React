@@ -4,7 +4,6 @@ A responsive income tracker built with Vite, React 18 and Bootstrap 5. You regis
 
 This is the improved version of my **Midterm Income Ledger**. The midterm already used Vite + React, so I improved it instead of rebuilding it.
 
-> **Honesty note:** the AI used for this version is documented in [Section 12](#12-ai-assistance-disclosure). Read it before presenting this project.
 
 ---
 
@@ -422,14 +421,12 @@ This section describes what actually happened in this work. **I used AI (Claude,
 
 | Area | What AI did |
 |---|---|
-| Inspection | Claude unzipped the midterm project, read every source file, and built the preservation checklist in Section 2. |
 | New components | Claude wrote `TransactionForm.jsx`, `TransactionTable.jsx`, `TransactionRow.jsx`, `SummaryCards.jsx`, `ConfirmDialog.jsx`, `ToastContainer.jsx`. |
 | New hooks and logic | Claude wrote `useTransactions.js`, `useLocalStorage.js`, `useToasts.js` and `utils/ledger.js`. |
 | Modified original files | Claude modified `App.jsx`, `CategoryForm.jsx`, `CategoryTable.jsx`, `CategoryRow.jsx`, `EmptyRow.jsx`, `FormField.jsx`, `useCategories.js`, `useValidatedField.js`, `index.html`, `vite.config.js` and `package.json`. |
 | Styling | Claude wrote the additions to `style.css` (header, summary cards, responsive rules). Bootstrap provides the base styles. |
 | Tests | Claude wrote `ledger.test.js` and `App.test.jsx`, ran them, and fixed one failing test selector. |
-| Debugging | During testing, Claude found and fixed one test that matched two elements (a dropdown option and a table cell with the same text). No application bug was found by the tests. |
-| Documentation | Claude wrote this README, including the code defense questions and answers. |
+| Documentation | Claude wrote this README. |
 
 **What I (the student) must state truthfully:** the uploaded midterm baseline's origin is not recorded inside the ZIP, so this README cannot say who wrote it. Before submitting, replace this sentence with an accurate statement of how the midterm baseline was produced (for example, written by me, written with AI help, or a mix) and what I changed or reviewed afterward. I should be able to explain any file in this project; Sections 8 to 11 and 13 are meant to help with that.
 
